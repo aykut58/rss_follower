@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "748822231626",
+    "project_id": "rss-app-8670d",
+    "storage_bucket": "rss-app-8670d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:748822231626:android:34679d044d48d7aca684b3",
+        "android_client_info": {
+          "package_name": "com.aykutatabek.rssfollower_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "748822231626-88c1sue5jo5otko3pf8ghaoup332k697.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvp7EhEmVKHoWZOKPpm1vlXxkdxiS4kuI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "748822231626-88c1sue5jo5otko3pf8ghaoup332k697.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "748822231626-iok6d0oueo5fa8gjnrlc5am9cj38c432.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.rrsOkuyucuApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

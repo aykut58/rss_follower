@@ -1,0 +1,34 @@
+{
+    "home_page":
+    {
+        "dakika_once":"Dakika Önce",
+        "saat_once":"Saat Önce",
+        "gün_once":"Gün Önce"
+    },
+    "rss_list": 
+    {
+        "title": "Rss Listesi",
+        "RssListAwesomeDialog_Desc":"Rss Linki Silmek İstediğinize Emin Misiniz?",
+        "RssListAwesomeDialog_Title":"Uyarı!",
+        "RssListAwesomeDialog_Yes":"Evet",
+        "RssListAwesomeDialog_No":"Hayır",
+        "RssListNull":"Eklediğiniz Bir RSS Linkiniz Yok..."
+    },
+    "rss_add":
+    {
+        "TextFormFiled":"Bu alan boş Geçilemez.",
+        "title" : "Rss Ekleme",
+        "buttonText":"Ekle",
+        "labelText":"Linki Giriniz",
+        "snackBarBasarili":"İşlem Başarılı..",
+        "snackBarBasarisiz":"İşlem Başarısız..",
+        "RssAddtAwesomeDialog_Desc":"Rss Linki Zaten Var.",
+        "RssAddAwesomeDialog_Title":"Uyarı!"
+    },
+    "ayarlar":
+    {
+        "title":"Ayarlar",
+        "dil":"Dil",
+        "tema":"Koyu Tema"
+    }
+}
