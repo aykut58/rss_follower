@@ -1,9 +1,12 @@
 {
     "home_page":
     {
-        "dakika_once":"minute ago",
+        "dakika_once":"minutes ago",
         "saat_once":"hours ago",
-        "gün_once":"days ago"
+        "gun_once":"days ago",
+        "bir_dakika_once":"1 minute ago",
+        "bir_saat_once":"1 hour ago",
+        "bir_gun_once":"1 day ago"
     },
     "rss_list": 
     {
@@ -12,7 +15,7 @@
         "RssListAwesomeDialog_Title":"Warning!",
         "RssListAwesomeDialog_Yes":"Yes",
         "RssListAwesomeDialog_No":"No",
-        "RssListNull":"No RSS Link Has Been Added"
+        "RssListNull":"No RSS Link Was Found"
     },
     "rss_add":
     {

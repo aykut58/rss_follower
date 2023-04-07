@@ -53,25 +53,48 @@ class _SettingsPageState extends State<SettingsPage> {
               ]
       ),
                   SizedBox(height: 10,),
-              Row
-                  (
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: 
-                    [
-                      Text(LocaleKeys.ayarlar_tema.tr(),style:  TextStyle(fontSize: 20),),
-                      SizedBox(width: 10,),
-                      Switch(
-                        value: Provider.of<ThemeProvider>(context).isDarkModeEnabled,
-                        onChanged: (value) {
+                   Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.dark_mode),
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                "${LocaleKeys.ayarlar_tema.tr()} : ",
+                style: TextStyle(fontSize: 20),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Switch(
+                value: Provider.of<ThemeProvider>(context).isDarkModeEnabled,
+                onChanged: (value) {
+                  Provider.of<ThemeProvider>(context, listen: false)
+                      .setTheme(value);
+                },
+              ),
+            ],
+          ),
+              // Row
+              //     (
+              //       mainAxisAlignment: MainAxisAlignment.center,
+              //       children: 
+              //       [
+              //         Text(LocaleKeys.ayarlar_tema.tr(),style:  TextStyle(fontSize: 20),),
+              //         SizedBox(width: 10,),
+              //         Switch(
+              //           value: Provider.of<ThemeProvider>(context).isDarkModeEnabled,
+              //           onChanged: (value) {
                           
                 
-                            Provider.of<ThemeProvider>(context).setTheme(value);
+              //               Provider.of<ThemeProvider>(context).setTheme(value);
 
-                        },
-                      ),
+              //           },
+              //         ),
                       
-                    ],
-                  ),
+              //       ],
+              //     ),
           
               ],
             ),

@@ -1,7 +1,9 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+
+import 'package:rrs_okuyucu_app/models/rss_model.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webfeed/webfeed.dart';
 import 'package:http/http.dart' as http;
@@ -9,27 +11,28 @@ import 'dart:convert' show utf8;
 import 'package:cached_network_image/cached_network_image.dart';
 
 import '../core/utils/date_util.dart';
-import '../providers/url_provider.dart';
 
 
 class RssHomePage extends StatefulWidget {
+  RssModel rss;
+
   // ignore: prefer_const_constructors_in_immutables
-  RssHomePage({Key? key, required this.rssTitle}) : super(key: key);
-  final String  rssTitle;
+  RssHomePage({Key? key, required this.rss}) : super(key: key);
+
   @override
   // ignore: no_logic_in_create_state
-  _RssHomePageState createState() => _RssHomePageState(rssTitle);
+  _RssHomePageState createState() => _RssHomePageState(rss);
 }
 
 class _RssHomePageState extends State<RssHomePage> {
-  var rssTitle;
+  RssModel rss;
       /// Değişimini dinleyeceğimiz değişkene erişim için
 
   RssFeed? _feed;
   GlobalKey<RefreshIndicatorState>? _refreshKey; // yukarıdan çektiğimiz sayfanın yenilenmesi için kullanacağımız key
   // ignore: unused_field
   
-  _RssHomePageState( this.rssTitle); 
+  _RssHomePageState( this.rss); 
   
   Future<void> load() async { 
     await loadFeed().then((result) async {
@@ -43,12 +46,11 @@ class _RssHomePageState extends State<RssHomePage> {
   }
 
   Future<RssFeed?> loadFeed() async { 
-    String urlRss = Provider.of<UrlProvider>(context).setUrl;
+    
     try {
       final client = http.Client();
-      final response = await client.get(Uri.parse(urlRss));
+      final response = await client.get(Uri.parse(rss.url.toString()));
       final responseBody = utf8.decode(response.bodyBytes);
-      print("response" + response.body);
       return RssFeed.parse(responseBody);
      
     } on Exception {
@@ -89,7 +91,7 @@ class _RssHomePageState extends State<RssHomePage> {
     return Scaffold(
       appBar: AppBar(
         
-        title:  Text(rssTitle.toString()), // seçilen kaynak adı gelecek. //TODO 
+        title:  Text(rss.title.toString()), // seçilen kaynak adı gelecek. 
         
       ),
     //   endDrawer: Drawer(
@@ -129,8 +131,10 @@ class _RssHomePageState extends State<RssHomePage> {
     itemCount: _feed!.items!.length,
     itemBuilder: (BuildContext context, int index)
     {
+      
         final item = _feed!.items![index];
-
+        
+        final url = Uri.parse(_feed!.items![index].link.toString());
         String subTitle = "Şimdi";
         if(item.pubDate != null) 
         {
@@ -143,7 +147,7 @@ class _RssHomePageState extends State<RssHomePage> {
            ),
           child: ListTile
           (
-            subtitle: Text(subTitle),
+            //subtitle: Text(subTitle),
             leading: CachedNetworkImage(errorWidget: (context, url, error) => const Icon(Icons.image_not_supported_rounded , color: Colors.red,),
             imageUrl: item.enclosure?.url  ?? "hata" ,
             height: MediaQuery.of(context).size.height / 15,
@@ -164,11 +168,16 @@ class _RssHomePageState extends State<RssHomePage> {
               onTap: () async
               {
                 
-                final url = Uri.parse(_feed!.items![index].link.toString());
+                
+                
                 if(!await launchUrl(url))
                 {
                    throw 'Could not launch $url';
                 }
+              },
+              onLongPress: () 
+              {
+                share(context ,url );
               },
             ),
         );
@@ -177,5 +186,11 @@ class _RssHomePageState extends State<RssHomePage> {
 }
 
 
+}
+
+share(BuildContext context, Uri url) 
+{
+  final String text = url.toString();
+  Share.share(text);
 }
 

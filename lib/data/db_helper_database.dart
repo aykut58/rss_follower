@@ -119,4 +119,14 @@ Future<bool> rssControl(String rssLink) async {
     return false;
   }
 }
+
+Future<List<RssModel>> search(String searchText) async {
+    final db = await instance.database;
+
+    final result = await db.rawQuery("SELECT * FROM $tableName WHERE (UPPER($columnTitle) LIKE UPPER('%$searchText%'))");
+     var map = result.map((json) => RssModel.fromMap(json));
+
+     return map.toList();
+        
+  }
 }

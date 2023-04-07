@@ -1,11 +1,12 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
-// ignore_for_file: constant_identifier_names
-
 abstract class  LocaleKeys {
   static const home_page_dakika_once = 'home_page.dakika_once';
   static const home_page_saat_once = 'home_page.saat_once';
-  static const home_page_gun_once = 'home_page.gün_once';
+  static const home_page_gun_once = 'home_page.gun_once';
+  static const home_page_bir_dakika_once = 'home_page.bir_dakika_once';
+  static const home_page_bir_saat_once = 'home_page.bir_saat_once';
+  static const home_page_bir_gun_once = 'home_page.bir_gun_once';
   static const home_page = 'home_page';
   static const rss_list_title = 'rss_list.title';
   static const rss_list_RssListAwesomeDialog_Desc = 'rss_list.RssListAwesomeDialog_Desc';

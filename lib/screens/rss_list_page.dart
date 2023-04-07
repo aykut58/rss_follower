@@ -4,15 +4,18 @@ import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
+
 import 'package:rrs_okuyucu_app/models/rss_model.dart';
 import 'package:rrs_okuyucu_app/screens/home_page.dart';
 import 'package:rrs_okuyucu_app/screens/rss_add_page.dart';
 
+
+
+import '../components/search_bar.dart';
 import '../core/init/locale_keys.g.dart';
 import '../data/db_helper_database.dart';
 
-import '../providers/url_provider.dart';
+
 
 
 class RssListPage extends StatefulWidget {
@@ -38,11 +41,7 @@ class _RssListPageState extends State<RssListPage> {
   @override
   Widget build(BuildContext context) {
     
-    /// Değişimini dinleyeceğimiz [Değişkene] erişim için
-    final watch = context.watch<UrlProvider>();
 
-    /// Yeni değer ataması yapacağımız [Metota] erişim için
-    final read = context.read<UrlProvider>();
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () 
@@ -52,7 +51,16 @@ class _RssListPageState extends State<RssListPage> {
         child: const Icon(Icons.add),),
       appBar: AppBar
       (
-        title: Text("Rss Follower", style: GoogleFonts.taiHeritagePro(fontSize: 30,),),/*Text (LocaleKeys.rss_list_title).tr(),*/
+        title: SearchBar
+        (
+          onSearched : (text) 
+          {
+            setState(() {
+              rssList = DbHelperDatabase.instance.search(text);
+            });
+          }
+        ),
+        //title: Text("Rss Follower", style: GoogleFonts.taiHeritagePro(fontSize: 30,),),/*Text (LocaleKeys.rss_list_title).tr(),*/
       ),
 
       body: FutureBuilder<List<RssModel>>(
@@ -110,8 +118,7 @@ class _RssListPageState extends State<RssListPage> {
                       icon: Icon(Icons.delete, color: Colors.red,),),
                       onTap: () 
                       {
-                        read.setUrl=rss.url.toString();
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => RssHomePage(rssTitle: rss.title.toString(),),));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => RssHomePage(rss: rss,),));
                       },
                   ),
                  );

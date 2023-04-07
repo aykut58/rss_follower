@@ -340,36 +340,36 @@
     ),
     filled: false,
     fillColor: Color( 0x00000000 ), floatingLabelBehavior: FloatingLabelBehavior.auto,
-    errorBorder: OutlineInputBorder(
-      borderSide: BorderSide(color: Color( 0xff000000 ), width: 1, style: BorderStyle.solid, ),
-      borderRadius: BorderRadius.all(Radius.circular(4.0)),
-      gapPadding: 4
-    ),
-    focusedBorder: OutlineInputBorder(
-      borderSide: BorderSide(color: Color.fromARGB(255, 255, 255, 255), width: 1, style: BorderStyle.solid, ),
-      borderRadius: BorderRadius.all(Radius.circular(4.0)),
-      gapPadding: 4
-    ),
-    focusedErrorBorder: OutlineInputBorder(
-      borderSide: BorderSide(color: Color.fromARGB(255, 255, 255, 255), width: 1, style: BorderStyle.solid, ),
-      borderRadius: BorderRadius.all(Radius.circular(4.0)),
-      gapPadding: 4
-    ),
-    disabledBorder: OutlineInputBorder(
-      borderSide: BorderSide(color: Color.fromARGB(255, 255, 254, 254), width: 1, style: BorderStyle.solid, ),
-      borderRadius: BorderRadius.all(Radius.circular(4.0)),
-      gapPadding: 4
-    ),
-    enabledBorder: OutlineInputBorder(
-      borderSide: BorderSide(color: Color.fromARGB(255, 255, 255, 255), width: 1, style: BorderStyle.solid, ),
-      borderRadius: BorderRadius.all(Radius.circular(4.0)),
-      gapPadding: 4
-    ),
-    border: OutlineInputBorder(
-      borderSide: BorderSide(color: Color.fromARGB(255, 255, 255, 255), width: 1, style: BorderStyle.solid, ),
-      borderRadius: BorderRadius.all(Radius.circular(4.0)),
-      gapPadding: 4
-    ),
+    // errorBorder: OutlineInputBorder(
+    //   borderSide: BorderSide(color: Color( 0xff000000 ), width: 1, style: BorderStyle.solid, ),
+    //   borderRadius: BorderRadius.all(Radius.circular(4.0)),
+    //   gapPadding: 4
+    // ),
+    // focusedBorder: OutlineInputBorder(
+    //   borderSide: BorderSide(color: Color.fromARGB(255, 255, 255, 255), width: 1, style: BorderStyle.solid, ),
+    //   borderRadius: BorderRadius.all(Radius.circular(4.0)),
+    //   gapPadding: 4
+    // ),
+    // focusedErrorBorder: OutlineInputBorder(
+    //   borderSide: BorderSide(color: Color.fromARGB(255, 255, 255, 255), width: 1, style: BorderStyle.solid, ),
+    //   borderRadius: BorderRadius.all(Radius.circular(4.0)),
+    //   gapPadding: 4
+    // ),
+    // disabledBorder: OutlineInputBorder(
+    //   borderSide: BorderSide(color: Color.fromARGB(255, 255, 254, 254), width: 1, style: BorderStyle.solid, ),
+    //   borderRadius: BorderRadius.all(Radius.circular(4.0)),
+    //   gapPadding: 4
+    // ),
+    // enabledBorder: OutlineInputBorder(
+    //   borderSide: BorderSide(color: Color.fromARGB(255, 255, 255, 255), width: 1, style: BorderStyle.solid, ),
+    //   borderRadius: BorderRadius.all(Radius.circular(4.0)),
+    //   gapPadding: 4
+    // ),
+    // border: OutlineInputBorder(
+    //   borderSide: BorderSide(color: Color.fromARGB(255, 255, 255, 255), width: 1, style: BorderStyle.solid, ),
+    //   borderRadius: BorderRadius.all(Radius.circular(4.0)),
+    //   gapPadding: 4
+    // ),
   ),
     iconTheme: const IconThemeData(
       color: Color( 0xffffffff ),

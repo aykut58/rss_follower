@@ -14,7 +14,7 @@ import 'package:rrs_okuyucu_app/screens/start_page.dart';
 
 
 import 'providers/theme_provider.dart';
-import 'providers/url_provider.dart';
+
 
 import 'ui/custom_theme.dart';
 import 'ui/custom_theme_dark.dart';
@@ -31,7 +31,7 @@ main() async {
   await langProvider.loadLocale();
   ThemeProvider themeProvider = ThemeProvider();
   themeProvider.loadTheme();
-  UrlProvider urlProvider =UrlProvider();
+  
   
   
 
@@ -57,10 +57,7 @@ main() async {
         MultiProvider(
         providers: 
         [
-          ChangeNotifierProvider<UrlProvider>
-          (
-            create: (context) => UrlProvider(),
-          ),
+ 
           ChangeNotifierProvider<ThemeProvider>
           (
             create: (context) => themeProvider,
@@ -94,8 +91,8 @@ class _MyAppState extends State<MyApp> {
     
 
     
-    return Consumer3<ThemeProvider,LangProvider, UrlProvider>(
-      builder: (context, themeProvider,langProvider,urlProvider, _,)
+    return Consumer2<ThemeProvider,LangProvider>(
+      builder: (context, themeProvider,langProvider,_,)
       {
         print("dil : ${langProvider.getLocale}");
         print("tema değeri :  ${themeProvider.isDarkModeEnabled}");

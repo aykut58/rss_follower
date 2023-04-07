@@ -3,7 +3,11 @@
     {
         "dakika_once":"Dakika Önce",
         "saat_once":"Saat Önce",
-        "gün_once":"Gün Önce"
+        "gun_once":"Gün Önce",
+        "bir_dakika_once":"1 Dakika Önce",
+        "bir_saat_once":"1 Saat Önce",
+        "bir_gun_once":"1 Gün Önce"
+
     },
     "rss_list": 
     {
